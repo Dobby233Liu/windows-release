@@ -3,18 +3,21 @@ const os = require('os');
 const execa = require('execa');
 
 // Reference: https://www.gaijin.at/en/lstwinver.php
+// https://betawiki.net/wiki/Microsoft_Windows
 const names = new Map([
 	['10.0', '10'],
+        ['6.4', '10'], // Thersold
 	['6.3', '8.1'],
 	['6.2', '8'],
 	['6.1', '7'],
 	['6.0', 'Vista'],
-	['5.2', 'Server 2003'],
+        ['5.5', 'Neptune'],
+	['5.2', 'Server 2003'], // XP 64, Home Server
 	['5.1', 'XP'],
 	['5.0', '2000'],
 	['4.9', 'ME'],
 	['4.1', '98'],
-	['4.0', '95']
+	['4.0', '95'] // NT 4
 ]);
 
 const windowsRelease = release => {
